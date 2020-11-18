@@ -1,24 +1,49 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column   | Type   | Option   |
+| -------- | ------ | -------- |
+| name     | string | NOT NULL |
+| email    | string | NOT NULL |
+| password | string | NOT NULL |
+| nickname | string | NOT NULL |
+| birthday | date   | NOT NULL |
 
-Things you may want to cover:
+### Association
+ - has_many :products
+ - has_one :customer
 
-* Ruby version
+ ## productsテーブル
 
-* System dependencies
+| Column   | Type       | Option            |
+| -------- | ---------- | ----------------- |
+| title    | string     | NOT NULL          |
+| concept  | text       | NOT NULL          |
+| category | string     | NOT NULL          |
+| status   | string     | NOT NULL          |
+| user     | references | foreign_key: true |
+| delivery | string     | NOT NULL          |
+| area     | string     | NOT NULL          |
+| day      | date       | NOT NULL          |
+| price    | integer    | NOT NULL          |
 
-* Configuration
+### Association
+ - belongs_to :user
+ - has_one :customer
 
-* Database creation
+## customersテーブル
 
-* Database initialization
+| Column   | Type       | Option   |
+| ------ --| ---------- | -------- |
+| user     | references |          |
+| product  | references |          |
+| card     | integer    | NOT NULL |
+| security | integer    | NOT NULL |
+| content  | text       |          |
+| postal   | integer    | NOT NULL |
+| home     | text       | NOT NULL |
+| building | text       |          |
+| number   | integer    | NOT NULL |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+ - belongs_to :product
+ - belongs_to :user
