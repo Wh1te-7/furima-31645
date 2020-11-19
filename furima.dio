@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-11-19T04:07:56.959Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.6.5" etag="8tFKng4ORZwxzx29rw2s">
+<mxfile host="65bd71144e" modified="2020-11-19T05:13:02.250Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.6.5" etag="Di-Otlm-usjn8jq9QHDv">
     <diagram id="a8eylyxpf-rvfNEIiP5g" name="ページ1">
-        <mxGraphModel dx="1457" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1231" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -70,7 +70,7 @@
                 <mxCell id="40" value="adress" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="400" y="460" width="270" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="41" value="postail(integer型,NOT NULL)&#10;&#10;prefecture_id(integer型,NOT NULL)&#10;&#10;home(text型,NOT NULL)&#10;&#10;home_number(string型,NOT NULL)&#10;&#10;builduing(text型)&#10;&#10;number(integer型,NOT NULL)&#10;&#10;user(references型,foreign_key: true)&#10;&#10;product(references型,foreign_key: true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="40">
+                <mxCell id="41" value="postail(integer型,NOT NULL)&#10;&#10;prefecture_id(integer型,NOT NULL)&#10;&#10;home(string型,NOT NULL)&#10;&#10;home_number(string型,NOT NULL)&#10;&#10;builduing(text型)&#10;&#10;number(string型,NOT NULL)&#10;&#10;user(references型,foreign_key: true)&#10;&#10;product(references型,foreign_key: true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="40">
                     <mxGeometry y="26" width="270" height="254" as="geometry"/>
                 </mxCell>
             </root>
