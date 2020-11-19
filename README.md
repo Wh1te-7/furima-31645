@@ -35,9 +35,11 @@
  - has_many :comments
 
 ## commentsテーブル
-| Column  | Type       | Option   |
-| ------- | ---------- | -------- |
-| content | string     |          |
+| Column   | Type       | Option            |
+| -------- | ---------- | ----------------- |
+| content  | string     |                   |
+| product  | references | foreign_key: true |
+| customer | references | foreign_key: true |
 
 ### Association
  - belongs_to :product
@@ -50,12 +52,6 @@
 | user          | references | foreign_key: true |
 | product       | references | foreign_key: true |
 
-### Association
- - belongs_to :product
- - belongs_to :user
- - has_one :address
- - has_one :comment
-
 
 ### addressテーブル
 | postal        | string     | NOT NULL          |
@@ -64,8 +60,7 @@
 | home number   | string     | NOT NULL          |
 | building      | string     |                   |
 | number        | string     | NOT NULL          |
-| user          | references | foreign_key: true |
-| product       | references | foreign_key: true |
+| customer      | references | foreign_key: true |
 
 ### Association
  - belongs_to :customer
