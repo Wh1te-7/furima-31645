@@ -13,7 +13,7 @@
 
 ### Association
  - has_many :products
- - has_one :customer
+ - has_many :customer
 
  ## productsテーブル
 
@@ -23,7 +23,7 @@
 | concept     | text       | NOT NULL          |
 | category_id | integer    | NOT NULL          |
 | status_id   | integer    | NOT NULL          |
-| user_id     | references |                   |
+| user        | references | foreign_key: true |
 | delivery_id | integer    | NOT NULL          |
 | area_id     | integer    | NOT NULL          |
 | days_id     | integer    | NOT NULL          |
@@ -41,14 +41,14 @@
 
 ### Association
  - belongs_to :product
- belongs_to :customer
+ - belongs_to :customer
 
 ## customersテーブル
 
-| Column        | Type       | Option   |
-| ------------- | ---------- | -------- |
-| user_id       | references |          |
-| product_id    | references |          |
+| Column        | Type       | Option            |
+| ------------- | ---------- | ----------------- |
+| user          | references | foreign_key: true |
+| product       | references | foreign_key: true |
 
 ### Association
  - belongs_to :product
@@ -58,11 +58,14 @@
 
 
 ### addressテーブル
-| postal        | integer    | NOT NULL |
-| prefecture_id | integer    | NOT NULL |
-| home          | text       | NOT NULL |
-| building      | text       |          |
-| number        | integer    | NOT NULL |
+| postal        | string     | NOT NULL          |
+| prefecture_id | integer    | NOT NULL          |
+| home          | text       | NOT NULL          |
+| home number   | string     | NOT NULL          |
+| building      | text       |                   |
+| number        | string     | NOT NULL          |
+| user          | references | foreign_key: true |
+| product       | references | foreign_key: true |
 
 ### Association
  - belongs_to :customer
