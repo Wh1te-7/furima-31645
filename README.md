@@ -60,9 +60,9 @@
 ### addressテーブル
 | postal        | string     | NOT NULL          |
 | prefecture_id | integer    | NOT NULL          |
-| home          | text       | NOT NULL          |
+| home          | string     | NOT NULL          |
 | home number   | string     | NOT NULL          |
-| building      | text       |                   |
+| building      | string     |                   |
 | number        | string     | NOT NULL          |
 | user          | references | foreign_key: true |
 | product       | references | foreign_key: true |
