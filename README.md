@@ -62,7 +62,7 @@
 | postal        | string     | NOT NULL          |
 | prefecture_id | integer    | NOT NULL          |
 | home          | string     | NOT NULL          |
-| home number   | string     | NOT NULL          |
+| home_number   | string     | NOT NULL          |
 | building      | string     |                   |
 | number        | string     | NOT NULL          |
 | customer      | references | foreign_key: true |
