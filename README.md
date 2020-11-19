@@ -13,7 +13,8 @@
 
 ### Association
  - has_many :products
- - has_many :customer
+ - has_many :customers
+ - has_many :comments
 
  ## productsテーブル
 
@@ -39,11 +40,11 @@
 | -------- | ---------- | ----------------- |
 | content  | string     |                   |
 | product  | references | foreign_key: true |
-| customer | references | foreign_key: true |
+| user     | references | foreign_key: true |
 
 ### Association
  - belongs_to :product
- - belongs_to :customer
+ - belongs_to :user
 
 ## customersテーブル
 
@@ -52,6 +53,10 @@
 | user          | references | foreign_key: true |
 | product       | references | foreign_key: true |
 
+### Association
+ - belongs_to :product
+ - belongs_to :user
+ - has_one :address
 
 ### addressテーブル
 | postal        | string     | NOT NULL          |
