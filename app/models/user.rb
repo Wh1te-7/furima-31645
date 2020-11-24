@@ -5,17 +5,27 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
     # バリデーションの設定(空の文字列を保存させない為と一意性制約)
-    validates :nickname,               presence: true
-    validates :password,               presence: true, length: { minimum: 6 }, format: { with: /\A[a-zA-Z0-9]+\z/ }
-    validates :password_confirmation,  presence: true, length: { minimum: 6 }, format: { with: /\A[a-zA-Z0-9]+\z/ }
-    validates :first_name_kana,        presence: true, format: { with: /\A[ァ-ヶー－]+\z/ } 
-    validates :last_name_kana,         presence: true, format: { with: /\A[ァ-ヶー－]+\z/ } 
-    validates :first_name,             presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-    validates :last_name,              presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-    validates :birthday,              presence: true
+    with_options presence: true do
+      validates :nickname
+      with_options format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i} do
+        validates :password
+        validates :password_confirmation
+      end
+      with_options format: {with: /\A[ァ-ヶー－]+\z/} do
+        validates :first_name_kana
+        validates :last_name_kana
+      end
+      with_options format: {with: /\A[ぁ-んァ-ン一-龥]/} do
+        validates :first_name
+        validates :last_name
+      end
+      validates :birthday
+    end
 
     # アソシエーション
     has_many :products
     has_many :customers
     has_many :comments,    dependent: :destroy
-end
+  end
+
+  

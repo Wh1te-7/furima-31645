@@ -7,11 +7,8 @@ FactoryBot.define do
     nickname {"フリマ武雄"}
     birthday {Faker::Date.birthday(min_age: 18, max_age: 65)}
     password {"test002"}
-    password_confirmation {"test002"}
+    password_confirmation {password}
     email {Faker::Internet.free_email}
   end
 end
 
-# FactoryBotの記述をしていく
-# →マイグレーションファイルの記述を確認しながら記入していきましょう
-# →バリデーションに引っかからないようにしましょう
