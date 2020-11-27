@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.references :user,     foreign_key: true
       t.integer :delivery_id, null:false
       t.integer :area_id,     null:false
-      t.integer :days_id,     null:false
+      t.integer :day_id,     null:false
       t.integer :price,       null:false
       t.timestamps
     end

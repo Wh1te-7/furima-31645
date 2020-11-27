@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_one :customer
   has_many :comments
   has_one_attached :image
-  
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
   belongs_to_active_hash :status
@@ -19,7 +19,7 @@ class Item < ApplicationRecord
       validates :status_id
       validates :delivery_id
       validates :area_id
-      validates :days_id
+      validates :day_id
     end
     validates :price, 
     numericality: { 
