@@ -32,3 +32,4 @@ class Item < ApplicationRecord
     validates :image
   end
 end
+
