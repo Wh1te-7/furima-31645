@@ -21,6 +21,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.customer.present?
+      redirect_to root_path
+    end
   end
 
   def update
@@ -53,6 +56,12 @@ class ItemsController < ApplicationController
   end
 
   def sign_up
-    redirect_to root_path unless current_user == @item.user
+    if current_user == @item.user
+      render :edit
+    elsif user_signed_in? then
+      redirect_to root_path
+    else 
+      redirect_to new_user_session_path
+    end
   end
 end
