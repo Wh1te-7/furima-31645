@@ -12,11 +12,11 @@
 | birthday           | date   | NOT NULL |
 
 ### Association
- - has_many :products
+ - has_many :item
  - has_many :customers
  - has_many :comments
 
- ## productsテーブル
+ ## itemsテーブル
 
 | Column      | Type       | Option            |
 | ----------- | ---------- | ----------------- |
@@ -39,11 +39,11 @@
 | Column   | Type       | Option            |
 | -------- | ---------- | ----------------- |
 | content  | string     |                   |
-| product  | references | foreign_key: true |
+| item     | references | foreign_key: true |
 | user     | references | foreign_key: true |
 
 ### Association
- - belongs_to :product
+ - belongs_to :item
  - belongs_to :user
 
 ## customersテーブル
@@ -51,16 +51,16 @@
 | Column        | Type       | Option            |
 | ------------- | ---------- | ----------------- |
 | user          | references | foreign_key: true |
-| product       | references | foreign_key: true |
+| item          | references | foreign_key: true |
 
 ### Association
- - belongs_to :product
+ - belongs_to :item
  - belongs_to :user
  - has_one :address
 
-### addressテーブル
+### addressesテーブル
 | postal        | string     | NOT NULL          |
-| prefecture_id | integer    | NOT NULL          |
+| area_id       | integer    | NOT NULL          |
 | home          | string     | NOT NULL          |
 | home_number   | string     | NOT NULL          |
 | building      | string     |                   |

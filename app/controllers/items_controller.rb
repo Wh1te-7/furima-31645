@@ -40,6 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @customer = Customer.new
   end
 
   private
