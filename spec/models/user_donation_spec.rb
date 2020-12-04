@@ -61,7 +61,7 @@ RSpec.describe UserDonation, type: :model do
         expect(@user_donation.errors.full_messages).to include("Number is invalid")
       end
       it "numberが12字以上だと保存できないこと" do
-        @user_donation.number = "424242424242"
+        @user_donation.number = 424242424242
         @user_donation.valid?
         expect(@user_donation.errors.full_messages).to include("Number is invalid")
       end
