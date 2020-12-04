@@ -23,7 +23,7 @@ class User < ApplicationRecord
     end
 
     # アソシエーション
-    has_many :products
+    has_many :items
     has_many :customers
     has_many :comments,    dependent: :destroy
   end

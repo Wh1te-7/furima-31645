@@ -21,6 +21,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.customer.present?
+      redirect_to root_path
+    end
   end
 
   def update
@@ -40,6 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @customer = Customer.new
   end
 
   private
@@ -53,5 +57,4 @@ class ItemsController < ApplicationController
 
   def sign_up
     redirect_to root_path unless current_user == @item.user
-  end
 end
