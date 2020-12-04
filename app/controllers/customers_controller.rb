@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :buy_item
   before_action :authenticate_user!
   before_action :sign_up
 
@@ -26,8 +27,14 @@ class CustomersController < ApplicationController
     params.require(:user_donation).permit(:postal, :area_id, :home, :home_number, :building, :number ).merge(token: params[:token], user_id: current_user.id, item_id: @item.id)
   end
 
-  def sign_up
+  def buy_item
     @item = Item.find(params[:item_id])
+    if @item.customer.present?
+      redirect_to root_path
+    end
+  end
+
+  def sign_up
     if current_user == @item.user
       redirect_to root_path
     end

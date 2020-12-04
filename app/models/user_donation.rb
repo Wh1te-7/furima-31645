@@ -9,8 +9,9 @@ class UserDonation
     validates :home_number
     validates :number, format: {with: /\A\d{10,11}\z/ }
     validates :token
+    validates :user_id
+    validates :item_id
   end
-  validate :building
 
   def save
     # お客様の情報を保存

@@ -11,6 +11,5 @@ class Address < ApplicationRecord
     validates :home
     validates :home_number
     validates :number
-    validates :customer
   end
 end
