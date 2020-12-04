@@ -56,12 +56,5 @@ class ItemsController < ApplicationController
   end
 
   def sign_up
-    if current_user == @item.user
-      render :edit
-    elsif user_signed_in? then
-      redirect_to root_path
-    else 
-      redirect_to new_user_session_path
-    end
-  end
+    redirect_to root_path unless current_user == @item.user
 end
